@@ -229,4 +229,4 @@ button{font:inherit}
 
 /* Final Journey lock: keep the cinematic stage in the viewport while its parent scrolls */
 .journey-scroll-space{position:relative;height:calc(100svh * 7);margin-top:72px}
-.journey-stage{position:sticky;top:0;height:100svh;min-height:0;overflow:hidden}
+.journey-stage{position:-webkit-sticky;position:sticky;top:0;height:100svh;min-height:0;overflow:hidden}
