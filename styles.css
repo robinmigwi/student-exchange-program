@@ -15,7 +15,7 @@
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55}
 body.menu-open{overflow:hidden}
-.site-shell{overflow:clip}
+.site-shell{overflow:visible}
 img,video{display:block;width:100%;max-width:100%}
 a{color:inherit;text-decoration:none}
 button{font:inherit}
@@ -205,3 +205,8 @@ button{font:inherit}
 .checkout-highlights strong{font-size:12px;font-weight:600}
 .checkout-side-lower{max-width:390px}
 .payment-option input{position:relative}
+
+
+/* Final Journey lock: keep the cinematic stage in the viewport while its parent scrolls */
+.journey-scroll-space{position:relative;height:calc(100svh * 7);margin-top:72px}
+.journey-stage{position:sticky;top:0;height:100svh;min-height:0;overflow:hidden}
