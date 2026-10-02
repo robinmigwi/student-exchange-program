@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,400;10..48,500;10..48,600;10..48,700&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./styles.css?v=2026-10-02-02">
+<link rel="stylesheet" href="./styles.css?v=2026-10-02-03">
 </head>
 <body>
 <div class="site-shell">
@@ -179,6 +179,10 @@
 <p class="eyebrow light">Your journey starts here</p>
 <h2>Ready to<br><em>experience Kenya?</em></h2>
 <p>Reserve your place for the African Summer Immersion. Payment and registration details will be connected here once the program checkout is finalized.</p>
+<div class="programme-facts" aria-label="Programme details">
+<div class="programme-fact"><span>Programme fee</span><strong>US$3,000</strong><small>Per student</small></div>
+<div class="programme-fact"><span>Cohort size</span><strong>50 students</strong><small>Maximum capacity</small></div>
+</div>
 <a class="button button-light" id="reserve-button" href="./payment.html">Reserve your place <span>↗</span></a>
 <small>Choose Stripe, PayPal, bank transfer or another confirmed payment method.</small>
 </div>
@@ -191,5 +195,24 @@
 </footer>
 </div>
 <script src="./script.js?v=2026-10-02-02"></script>
+<script>
+(() => {
+  const video=document.querySelector('.hero-video');
+  const source=video?.querySelector('source[data-src]');
+  if(!video||!source)return;
+  const connection=navigator.connection||navigator.mozConnection||navigator.webkitConnection;
+  const slow=connection && (connection.saveData || /(^|-)2g$/.test(connection.effectiveType||''));
+  if(slow)return;
+  const loadVideo=()=>{
+    if(source.src)return;
+    source.src=source.dataset.src;
+    video.load();
+    const play=video.play();
+    if(play&&typeof play.catch==='function')play.catch(()=>{});
+  };
+  if('requestIdleCallback' in window)requestIdleCallback(loadVideo,{timeout:900});
+  else setTimeout(loadVideo,650);
+})();
+</script>
 </body>
 </html>
