@@ -1,1 +1,129 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#17231b"><title>Reserve Your Place — African Summer Immersion</title><link rel="icon" href="./favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,400;10..48,500;10..48,600;10..48,700&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="./styles.css"></head><body><header class="nav scrolled" id="site-nav"><a class="brand" href="./index.html"><span class="brand-mark"><span></span><span></span><span></span></span><span class="brand-text"><strong>AFRICAN SUMMER</strong><em>IMMERSION</em></span></a><a class="nav-cta" href="./contact.html">Questions? Contact us <span>↗</span></a></header><main class="page-minimal"><div class="page-head"><p class="eyebrow">African Summer Immersion · Registration</p><h1>Reserve your<br><em>place in Kenya.</em></h1><p>Tell us who you are, then choose the payment route that works for you. The program team can confirm the final payment instructions before you complete your reservation.</p></div><div class="checkout-layout"><form class="checkout-card" id="registration-form"><h2>Registration & payment</h2><p class="card-note">Your details help the team match your reservation to your payment.</p><div class="form-grid"><div class="form-field"><label for="name">Full name</label><input id="name" name="name" required placeholder="Your full name"></div><div class="form-field"><label for="email">Email</label><input id="email" name="email" type="email" required placeholder="you@example.com"></div><div class="form-field full"><label for="school">School / university</label><input id="school" name="school" placeholder="School or university"></div></div><div class="checkout-details"><h2>Choose how you’d like to pay</h2><div class="payment-options"><label class="payment-option selected"><input type="radio" name="method" value="stripe" checked><span><strong>Stripe</strong><small>Card and supported online payment methods</small></span><b>Online</b></label><label class="payment-option"><input type="radio" name="method" value="paypal"><span><strong>PayPal</strong><small>Use PayPal if the program enables it</small></span><b>Online</b></label><label class="payment-option"><input type="radio" name="method" value="bank"><span><strong>Bank transfer</strong><small>Receive the program’s confirmed bank details</small></span><b>Direct</b></label><label class="payment-option"><input type="radio" name="method" value="other"><span><strong>Another method</strong><small>Ask the team about an alternative arrangement</small></span><b>Contact</b></label></div><div class="payment-info" id="payment-info">Stripe checkout will be connected here once the program team confirms the account and payment link.</div><button class="button button-light checkout-submit" type="submit">Continue with selected method <span>→</span></button><p class="secure-note">No payment is taken on this demo until the program payment details are confirmed.</p></div></form><aside class="checkout-side"><div><p class="eyebrow light">A summer beyond the classroom</p><h3>Come curious.<br>Experience Kenya.</h3></div><div><p>From Nairobi’s streets and institutions to wildlife, tea country and the Ngong Hills, the immersion is designed to make Kenya something you experience, not simply visit.</p><a class="text-link light-link" href="./index.html#journey">Return to the journey ↓</a></div></aside></div></main><script>(()=>{const info=document.getElementById('payment-info');const labels=[...document.querySelectorAll('.payment-option')];const copy={stripe:'Stripe checkout will be connected here once the program team confirms the account and payment link.',paypal:'PayPal will be available here if the program team confirms it as a payment option.',bank:'Bank transfer instructions will appear here once the program team provides the confirmed account details.',other:'Choose this option if you would prefer another payment arrangement, then the team can contact you directly.'};labels.forEach(l=>l.addEventListener('click',()=>{labels.forEach(x=>x.classList.remove('selected'));l.classList.add('selected');info.textContent=copy[l.querySelector('input').value]}));document.getElementById('registration-form').addEventListener('submit',e=>{e.preventDefault();const method=document.querySelector('input[name=method]:checked').value;if(method==='stripe'){alert('Stripe is ready to be connected once the team confirms the official Stripe payment link.');}else if(method==='bank'){alert('Bank transfer details will be added once confirmed by the program team.');}else if(method==='paypal'){alert('PayPal will be connected if confirmed by the program team.');}else{window.location.href='./contact.html';}})})();</script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#17231b">
+<title>Reserve Your Place — African Summer Immersion</title>
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,400;10..48,500;10..48,600;10..48,700&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<header class="nav scrolled" id="site-nav">
+  <a class="brand" href="./index.html">
+    <span class="brand-mark"><span></span><span></span><span></span></span>
+    <span class="brand-text"><strong>AFRICAN SUMMER</strong><em>IMMERSION</em></span>
+  </a>
+  <a class="nav-cta" href="./contact.html">Questions? Contact us <span>↗</span></a>
+</header>
+
+<main class="page-minimal">
+  <div class="page-head">
+    <p class="eyebrow">African Summer Immersion · Registration</p>
+    <h1>Reserve your<br><em>place in Kenya.</em></h1>
+    <p>You're one step closer to a summer of new places, new conversations and a different perspective. Register your details below and choose the payment route that works best for you.</p>
+  </div>
+
+  <div class="checkout-layout">
+    <form class="checkout-card" id="registration-form">
+      <div class="checkout-kicker"><span>01</span><span>Your details</span></div>
+      <h2>Tell us who you are</h2>
+      <p class="card-note">We'll use these details to match your registration with the program team.</p>
+
+      <div class="form-grid">
+        <div class="form-field">
+          <label for="name">Full name</label>
+          <input id="name" name="name" required placeholder="Your full name">
+        </div>
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required placeholder="you@example.com">
+        </div>
+        <div class="form-field full">
+          <label for="school">School / university</label>
+          <input id="school" name="school" placeholder="School or university">
+        </div>
+      </div>
+
+      <div class="checkout-details">
+        <div class="checkout-kicker"><span>02</span><span>Payment</span></div>
+        <h2>Choose your payment route</h2>
+        <p class="card-note">Payment links and bank details will be connected once the program team confirms them.</p>
+
+        <div class="payment-options">
+          <label class="payment-option selected">
+            <input type="radio" name="method" value="stripe" checked>
+            <span><strong>Stripe</strong><small>Card and supported online payment methods</small></span>
+            <b>Online</b>
+          </label>
+          <label class="payment-option">
+            <input type="radio" name="method" value="paypal">
+            <span><strong>PayPal</strong><small>Pay online through PayPal</small></span>
+            <b>Online</b>
+          </label>
+          <label class="payment-option">
+            <input type="radio" name="method" value="bank">
+            <span><strong>Bank transfer</strong><small>Receive the confirmed program account details</small></span>
+            <b>Direct</b>
+          </label>
+          <label class="payment-option">
+            <input type="radio" name="method" value="other">
+            <span><strong>Another method</strong><small>Ask the program team about another arrangement</small></span>
+            <b>Contact</b>
+          </label>
+        </div>
+
+        <div class="payment-info" id="payment-info">Stripe checkout will be connected here once the program team confirms the official payment link.</div>
+        <button class="button button-light checkout-submit" type="submit">Continue with selected method <span>→</span></button>
+        <p class="secure-note">No payment is taken on this page until the official payment details are connected.</p>
+      </div>
+    </form>
+
+    <aside class="checkout-side">
+      <div>
+        <p class="eyebrow light">A summer beyond the classroom</p>
+        <h3>Come curious.<br>Experience Kenya.</h3>
+      </div>
+      <div class="checkout-side-lower">
+        <div class="checkout-highlights">
+          <div><span>01</span><strong>Nairobi</strong></div>
+          <div><span>02</span><strong>Academic exchange</strong></div>
+          <div><span>03</span><strong>Wildlife & beyond</strong></div>
+        </div>
+        <p>From Nairobi's streets and institutions to wildlife, tea country and the Ngong Hills, the immersion is designed to make Kenya something you experience, not simply visit.</p>
+        <a class="text-link light-link" href="./index.html#journey">Return to the journey ↓</a>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<script>
+(() => {
+  const info=document.getElementById('payment-info');
+  const labels=[...document.querySelectorAll('.payment-option')];
+  const copy={
+    stripe:'Stripe checkout will be connected here once the program team confirms the official payment link.',
+    paypal:'PayPal will be connected here once the program team confirms the official payment link.',
+    bank:'Bank transfer instructions will appear here once the program team provides the confirmed account details.',
+    other:'Choose this option if you would prefer another payment arrangement, then the team can contact you directly.'
+  };
+  labels.forEach(label=>label.addEventListener('click',()=>{
+    labels.forEach(x=>x.classList.remove('selected'));
+    label.classList.add('selected');
+    info.textContent=copy[label.querySelector('input').value];
+  }));
+  document.getElementById('registration-form').addEventListener('submit',e=>{
+    e.preventDefault();
+    const method=document.querySelector('input[name=method]:checked').value;
+    if(method==='stripe') alert('Stripe is ready to be connected once the team confirms the official Stripe payment link.');
+    else if(method==='bank') alert('Bank transfer details will be added once confirmed by the program team.');
+    else if(method==='paypal') alert('PayPal will be connected once confirmed by the program team.');
+    else window.location.href='./contact.html';
+  });
+})();
+</script>
+</body>
+</html>
